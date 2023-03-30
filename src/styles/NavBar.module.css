@@ -1,0 +1,9 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: orangered;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}

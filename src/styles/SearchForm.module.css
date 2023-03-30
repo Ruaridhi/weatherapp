@@ -1,0 +1,7 @@
+.searchButton {
+  margin: 0.5em;
+  padding: 0.25em;
+  border-radius: 5%;
+  color: white;
+  border: solid green;
+}
