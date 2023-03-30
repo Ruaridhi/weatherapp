@@ -16,8 +16,6 @@ test('loads and displays search page correctly', () => {
 
   expect(screen.getByLabelText('city-input')).toBeTruthy();
   expect(screen.getByRole('link', { name: /Find City/ }));
-
-  // Testing that clicking on the button redirects to the ResultsPage
   expect(screen.getByRole('link').getAttribute('href')).toEqual('/ResultsPage');
 });
 
@@ -30,6 +28,4 @@ test('when clicking on link calls weather api', () => {
   fireEvent.click(link);
 
   expect(getWeather).toHaveBeenCalled();
-
-  //I didn't test the change of state as I read it's considered bad practice and we want to test the the consequences of a state change: in this case the results page shows the right data
 });

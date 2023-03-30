@@ -1,4 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a weather forecast app in NextJS. It uses OpenWeatherMap API.
+
+How it works:
+
+- 3 pages
+- Search page
+Initial landing page where you can make first weather forecast request
+
+- ResultsPage
+After makeing initial API request routed to results page which shows minimal information regarding the weather forecast for next 5 days for place you have requested. Able to click on a day a navigate to third page
+
+- DetailedForecast
+This is the third page which reveals more detailed information reagerding the forecast for the the specific day you clicked on in results
+
+- All three pages have a search form in the navbar to perform a new weather search. This will take you to the 5 day results pahge for that new location searched.
+
+- You are currently not able to return to the main search landing page via the other pages, you must manual update the URL.
+
+
+
+Each page has a few reusable components that you can find in the Components folder.
+
+I decided to use NextJs as it's considered best practice from the React docs, however my previous experience was from CreateReactApp.
+
+I attempted to test the components in the **tests** folders. I did encountered a couple of challenges for testing. 
+
+Another challange was in regard to the open weather API which is different to that given in the challange documentation. The new forecast endpoint didn't accept city as a param rather coordinates hence why I required 2 API calls to be able to return the 5day forcast. 
+
+If I had more time:
+
+- Fix the tests so it ignores CSS files
+- Create end to end test to test the interaction between the components
+- Get current location would be cool
+- Improve test coverage
+-add a route back to the main search page from both result pages
+- Have done some but maybe tidy up CSS a little bit more as I'm sure there is some duplicate styling still
+- would improve experience if input is incorrect(eg not a city)
+- Include ability to press enter to triggger API with input data
+
+I'm open to any feedback and hope to have the opportunity to talk this through with you
 
 ## Getting Started
 
@@ -6,33 +45,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

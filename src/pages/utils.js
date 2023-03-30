@@ -5,7 +5,6 @@ export const getWeather = async (city) => {
     const coordinates = await getCoordinates(city);
     console.log(coordinates);
     const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.coord.lat}&lon=${coordinates.coord.lon}&cnt=5&APPID=${apiKey}`;
-    // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
     const response = await fetch(url);
 
     if (!response.ok) {
@@ -39,3 +38,10 @@ export const getCoordinates = async (city) => {
     return err.message;
   }
 };
+
+export function formatDate(date) {
+  const dayName = date.toLocaleString('default', { weekday: 'long' });
+  const month = date.toLocaleString('default', { month: 'short' });
+  const day = date.getDate();
+  return `${dayName}, ${month} ${day}`;
+}

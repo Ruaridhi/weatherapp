@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import Link from 'next/link';
 import { getWeather } from '../pages/utils';
 import AppContext from './AppContext';
 import { useRouter } from 'next/router';
@@ -16,10 +15,12 @@ export default function SearchForm() {
   };
 
   const handleClick = async (city) => {
+    const capitalisedCity = city.toLowerCase().replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+
     try {
       const resp = await getWeather(city);
       setForecast(resp.list);
-      setCityName(city);
+      setCityName(capitalisedCity);
       router.push('/ResultsPage');
     } catch (err) {
       return err;

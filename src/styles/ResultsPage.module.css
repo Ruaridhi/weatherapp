@@ -1,0 +1,20 @@
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  color: lightgray;
+  align-items: center;
+}
+
+.result {
+  flex: 1 0 20%;
+  margin: 5px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: gray;
+  align-items: center;
+  font-size: 25px;
+}

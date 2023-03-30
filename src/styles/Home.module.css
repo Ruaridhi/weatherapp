@@ -6,4 +6,5 @@
   padding: 6rem;
   min-height: 100vh;
   background-image: linear-gradient(to bottom right, yellow, red);
+  width: 100vw;
 }
