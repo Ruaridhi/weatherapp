@@ -19,7 +19,7 @@ export default function SearchForm() {
 
     try {
       const resp = await getWeather(city);
-      setForecast(resp.list);
+        setForecast(resp.list);
       setCityName(capitalisedCity);
       router.push('/ResultsPage');
     } catch (err) {
@@ -27,10 +27,21 @@ export default function SearchForm() {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleClick(event.target.value);
+    }
+  };
+
   return (
     <>
       <div className={style.input}>
-        <input aria-label="city-input" onChange={handleChange} city={city} />
+        <input
+          aria-label="city-input"
+          onChange={handleChange}
+          city={city}
+          onKeyDown={handleKeyDown}
+        />
       </div>
       <div className={style.searchButton}>
         <a onClick={() => handleClick(city)}>Find City</a>
