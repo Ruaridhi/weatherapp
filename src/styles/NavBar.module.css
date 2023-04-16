@@ -8,3 +8,28 @@
   top: 0;
   left: 0;
 }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+  align-items: center;
+  background-color: orangered;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.horizontalSearch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#homeLink {
+  display: flex;
+  background: none;
+  color: white;
+  justify-content: left;
+}

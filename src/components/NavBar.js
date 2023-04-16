@@ -13,9 +13,13 @@ export default function NavBar() {
   return (
     <div className={style.nav}>
       <h3>
-        <a id={style.homeLink} onClick={handleClick}>City Weather</a>
+        <a id={style.homeLink} onClick={handleClick}>
+          City Weather
+        </a>
       </h3>
-      <SearchForm />
+      <div className={style.horizontalSearch} v>
+        <SearchForm />
+      </div>
     </div>
   );
 }
