@@ -31,10 +31,8 @@ export const getCoordinates = async (city) => {
     }
 
     const coordinates = await response.json();
-    console.log(coordinates);
     return coordinates;
   } catch (err) {
-    console.log(err.message);
     return err.message;
   }
 };

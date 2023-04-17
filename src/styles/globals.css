@@ -99,4 +99,5 @@ a {
   display: flex;
   background-color: green;
   justify-content: center;
+  cursor:default;
 }
